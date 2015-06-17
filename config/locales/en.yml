@@ -21,3 +21,18 @@
 
 en:
   hello: "Hello world"
+
+  activerecord:
+    attributes:
+      address:
+        locality: "City"
+        region: "State"
+      employer:
+        name: "Nom"
+      user:
+        address.locality: "City"
+        address.region: "State"
+        mailing_address.locality: "City"
+        mailing_address.region: "State"
+
+        employer.name: "Societe Nom"

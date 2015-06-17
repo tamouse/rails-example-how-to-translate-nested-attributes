@@ -11,6 +11,43 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20150617010833) do
+
+  create_table "addresses", force: :cascade do |t|
+    t.integer  "addressable_id"
+    t.string   "addressable_type"
+    t.string   "street"
+    t.string   "extended"
+    t.string   "locality"
+    t.string   "region"
+    t.string   "country"
+    t.string   "postal_code"
+    t.string   "email"
+    t.string   "web"
+    t.string   "phone"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
+
+  add_index "addresses", ["addressable_type", "addressable_id"], name: "index_addresses_on_addressable_type_and_addressable_id"
+
+  create_table "employers", force: :cascade do |t|
+    t.string   "name"
+    t.string   "description"
+    t.integer  "user_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "employers", ["user_id"], name: "index_employers_on_user_id"
+
+  create_table "users", force: :cascade do |t|
+    t.string   "username"
+    t.string   "lastname"
+    t.string   "firstname"
+    t.string   "email"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
 end
