@@ -1,0 +1,30 @@
+
+// Set up template for sticky footer and fixed top navbar
+$footer_height: 60px;
+
+// "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    /* Set the fixed height of the footer here */
+    height: $footer_height;
+    background-color: #f5f5f5;
+
+    > .container {
+        padding-top: 20px;
+        padding-right: 15px;
+        padding-left:  15px;
+    }
+}
+
+body {
+    margin-bottom: $footer_height;
+
+    > .container {
+        padding: $navbar_height 15px;
+    }
+}
