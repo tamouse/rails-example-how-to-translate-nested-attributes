@@ -1,18 +1,14 @@
 en:
   activerecord:
     attributes:
-      address:
+      address: &address
         street: "Street"
         locality: "City"
         region: "State"
         country: "Country"
         postal_code: "Zip"
       mailing_address:
-        street: "Street"
-        locality: "City"
-        region: "State"
-        country: "Country"
-        postal_code: "Zip"
+        <<: *address
       employer:
         name: "Nom"
       user:
